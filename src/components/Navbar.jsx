@@ -20,7 +20,9 @@ const Navbar = () => {
             <li>
             <a href="#skills" className="hover:text-white transition">Skills</a>
           </li>
-            <li className="hover:text-white cursor-pointer">Project</li>
+             <li>
+            <a href="#projects" className="hover:text-white transition">Projects</a>
+          </li>
             <li className="hover:text-white cursor-pointer">Contact</li>
          </ul>
          
