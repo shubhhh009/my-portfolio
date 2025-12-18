@@ -37,7 +37,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="min-h-screen bg-[#2f2f2f] px-10 py- text-white"
+      className="min-h-[60vh] bg-white dark:bg-black text-black dark:text-white px-10 py-20"
     >
       <div className="w-full flex flex-col md:flex-row justify-between">
         <div className="flex-1 flex flex-col gap-8">
@@ -49,14 +49,15 @@ const Projects = () => {
             {projects.map((project,index)=>(
                <div 
                key={index}
-               className="rounded-xl border border-white/10 bg-white/5 
+               className="rounded-xl border border-black/10 dark:border-white/10 
+               bg-black/5 dark:bg-white/5 
                p-6 hover:scale-[1.02] hover:border-purple-500/50
                transition-all duration-300"
                >
                 <h3 className="text-2xl font-semibold mb-3">
                     {project.title}
                 </h3>
-                <p className="text-gray-400 mb-4 text-sm leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm leading-relaxed">
                     {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">

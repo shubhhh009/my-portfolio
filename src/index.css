@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@variant dark (&:where(.dark, .dark *));
+
 
 /* Particle animation helpers */
 .particle-reset {
@@ -9,6 +11,7 @@
 .particle-explode {
   opacity: 1;
 }
+
 html {
   scroll-behavior: smooth;
 }
