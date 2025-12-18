@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [darkMode, setDarkMode] = useState(true);
@@ -27,11 +28,16 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full
+    <motion.nav
+      initial={{ y: -60, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="fixed top-0 left-0 w-full
                     bg-white/80 dark:bg-black/80
                     backdrop-blur border-b
                     border-black/10 dark:border-white/10
-                    z-50">
+                    z-50"
+    >
       <div className="w-full px-6 py-4 flex items-center">
         {/* Logo */}
         <h1 className="text-xl font-bold text-purple-600">
@@ -107,7 +113,7 @@ const Navbar = () => {
           ☰
         </button>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 
