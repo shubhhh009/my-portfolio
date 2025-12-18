@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 function Skills() {
   const skills = [
@@ -33,8 +34,6 @@ function Skills() {
     "Netlify",
     "Docker",
     "WebSockets",
-    "SEO Optimization",
-    "Performance Tuning",
   ];
 
   const VISIBLE_COUNT = 12;
@@ -45,7 +44,11 @@ function Skills() {
     : skills.slice(0, VISIBLE_COUNT);
 
   return (
-    <section
+    <motion.section
+     initial={{ opacity: 0, y: 50 }}
+     whileInView={{ opacity: 1, y: 0 }}
+     transition={{ duration: 1 }}
+     viewport={{ once: true }}
       id="skills"
       className="min-h-[80vh] bg-white dark:bg-black text-black dark:text-white px-10 py-8"
     >
@@ -83,7 +86,7 @@ function Skills() {
         )}
 
       </div>
-    </section>
+    </motion.section>
   );
 }
 
