@@ -1,5 +1,5 @@
 import profileImg from "../assets/profile.jpg";
-import { motion } from "framer-motion";
+import { motion, scrollInfo } from "framer-motion";
 
 function Hero() {
   return (
@@ -36,10 +36,18 @@ function Hero() {
           </p>
 
           <div className="flex gap-6 mt-4">
-            <button className="bg-purple-600 hover:bg-purple-700 transition px-6 py-3 rounded font-semibold">
+            <button 
+            onClick={() => {
+            document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+              }}
+            className="bg-purple-600 hover:bg-purple-700 transition px-6 py-3 rounded font-semibold">
               View Projects
             </button>
-            <button className="border border-purple-500 text-purple-400 hover:bg-purple-600 hover:text-white transition px-6 py-3 rounded font-semibold">
+            <button 
+            onClick={()=>{
+              document.getElementById('contact')?.scrollIntoView({behavior:'smooth'});
+            }}
+            className="border border-purple-500 text-purple-400 hover:bg-purple-600 hover:text-white transition px-6 py-3 rounded font-semibold">
               Contact Me
             </button>
           </div>

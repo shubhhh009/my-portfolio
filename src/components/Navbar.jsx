@@ -47,7 +47,7 @@ const Navbar = () => {
         </h1>
 
         
-        <ul className="ml-auto hidden md:flex gap-8 text-base font-bold">
+        <ul className="ml-96 hidden md:flex gap-8 text-base font-bold">
           {links.map((item) => (
             <li key={item}>
               <a
