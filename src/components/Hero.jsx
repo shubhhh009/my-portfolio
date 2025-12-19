@@ -9,7 +9,7 @@ function Hero() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      className="min-h-[60vh] flex items-center bg-white dark:bg-black text-black dark:text-white px-10"
+      className=" min-h-[60vh] flex items-center bg-white dark:bg-black text-black dark:text-white px-10 py-8"
     >
       <div className="w-full flex flex-col md:flex-row items-center justify-between gap-10">
         {/* LEFT CONTENT */}

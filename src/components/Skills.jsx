@@ -39,21 +39,22 @@ function Skills() {
   const VISIBLE_COUNT = 12;
   const [showAll, setShowAll] = useState(false);
 
-  const visibleSkills = showAll
-    ? skills
-    : skills.slice(0, VISIBLE_COUNT);
+  const visibleSkills = showAll ? skills : skills.slice(0, VISIBLE_COUNT);
 
   return (
     <motion.section
-     initial={{ opacity: 0, y: 50 }}
-     whileInView={{ opacity: 1, y: 0 }}
-     transition={{ duration: 1 }}
-     viewport={{ once: true }}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+      viewport={{ once: true }}
       id="skills"
-      className="min-h-[80vh] bg-white dark:bg-black text-black dark:text-white px-10 py-8"
+
+    className={`${showAll ? "min-h-[80vh]" : "min-h-fit"}
+           bg-white dark:bg-black text-black dark:text-white px-10 py-8`}
+
+
     >
       <div className="w-full mx-auto">
-
         {/* Title */}
         <h2 className="text-4xl font-bold mb-4">
           My <span className="text-purple-600">Skills</span>
@@ -64,7 +65,15 @@ function Skills() {
         </p>
 
         {/* Skills */}
-        <div className="flex flex-wrap gap-10 justify-center">
+        <div
+          className=" grid
+           grid-cols-6       
+           sm:grid-cols-4
+           md:grid-cols-6
+           lg:grid-cols-8
+           gap-4
+           justify-items-center"
+        >
           {visibleSkills.map((skill, i) => (
             <SkillBubble key={i} label={skill} />
           ))}
@@ -84,7 +93,6 @@ function Skills() {
             </button>
           </div>
         )}
-
       </div>
     </motion.section>
   );
@@ -99,14 +107,15 @@ function SkillBubble({ label }) {
 
   return (
     <div
-      className="relative w-28 h-28"
+      className="relative w-12 h-12 sm:w-20 sm:h-20 md:w-28 md:h-28"
       onMouseEnter={() => setExplode(true)}
       onMouseLeave={() => setExplode(false)}
     >
       {/* Main Circle */}
       <div
         className={`absolute inset-0 flex items-center justify-center
-        rounded-full bg-purple-600 font-semibold text-sm text-center px-2
+        rounded-full bg-purple-600 font-semibold
+        text-[8px] sm:text-xs md:text-sm text-center px-2
         transition-all duration-500
         ${explode ? "scale-0 opacity-0" : "scale-100 opacity-100"}`}
       >
