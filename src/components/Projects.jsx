@@ -24,11 +24,11 @@ const projects = [
     github: "https://github.com/shubhhh009/react-ai-tool",
   },
   {
-    title: "Upcoming Project",
+    title: "Modern School Management System",
     description:
-      "",
-    tech: [""],
-    live: "#",
+      "VidhyaPro is a modern education-focused learning application designed to provide students and learners with a simple, structured, and efficient digital learning experience.",
+    tech: ["HTML, CSS, Javascript"],
+    live: "https://school-project-five-lilac.vercel.app/",
     github: "#",
   },
 ];
