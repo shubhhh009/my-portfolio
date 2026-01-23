@@ -1,4 +1,4 @@
-import profileImg from "../assets/profile.jpg";
+import profileImg from "../assets/Profile.PNG";
 import { motion, scrollInfo } from "framer-motion";
 
 function Hero() {
@@ -55,16 +55,18 @@ function Hero() {
         <motion.div 
          whileHover={{ scale: 1.05 }}
          transition={{ type: "spring", stiffness: 100 }}
-         className="relative"
+         className="relative mt-20 md:mt-10"
         >
-          {/* Decorative Blob */}
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+          {/* Decorative Blob - Keeping it but adjusting opacity or removing if clashes, let's keep for now as background glow */}
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur-3xl opacity-20 animate-pulse"></div>
           
-          <img
-            src={profileImg}
-            alt="Shubham Tiwari"
-            className="relative w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-white dark:border-white/10 shadow-2xl"
-          />
+          <div className="relative w-80 h-80 md:w-[450px] md:h-[450px] rounded-full p-1.5 bg-[conic-gradient(#EA4335_0deg_90deg,#4285F4_90deg_180deg,#34A853_180deg_270deg,#FBBC05_270deg_360deg)] shadow-2xl">
+            <img
+              src={profileImg}
+              alt="Shubham Tiwari"
+              className="w-full h-full rounded-full object-contain border-4 border-white dark:border-white/10"
+            />
+          </div>
         </motion.div>
 
       </div>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import { Github, Linkedin, Mail, Twitter, Download, Sun, Moon, Menu, X } from "lucide-react";
-import profileImg from "../assets/profile.jpg";
+import profileImg from "../assets/Profile.PNG";
 
 const Sidebar = () => {
     const [theme, setTheme] = useState(
@@ -44,7 +44,7 @@ const Sidebar = () => {
           
           {/* Profile Section */}
           <div className="flex flex-col items-center mb-8 text-center px-6 w-full mt-16 md:mt-0">
-            <div className="relative w-28 h-28 mb-4 rounded-full p-1 bg-gradient-to-tr from-purple-500 to-pink-500 shadow-lg">
+            <div className="relative w-28 h-28 mb-4 rounded-full p-1 bg-[conic-gradient(#EA4335_0deg_90deg,#4285F4_90deg_180deg,#34A853_180deg_270deg,#FBBC05_270deg_360deg)] shadow-lg">
               <img
                 src={profileImg}
                 alt="Profile"
