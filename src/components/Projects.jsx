@@ -1,3 +1,5 @@
+import { ExternalLink, Github } from "lucide-react";
+
 const projects = [
   {
     title: "AstroVibes",
@@ -6,6 +8,7 @@ const projects = [
     tech: ["React", "Tailwind CSS", "Local Storage"],
     live: "https://astrology-app-ashen.vercel.app/login",
     github: "https://github.com/shubhhh009/Astrology-app",
+    color: "from-purple-500 to-indigo-500",
   },
   {
     title: "WebInsight AI",
@@ -14,6 +17,7 @@ const projects = [
     tech: ["Next.js", "Node.js", "PostgreSQL", "BullMQ"],
     live: "https://new-ai-scrapper-l43e.vercel.app/",
     github: "https://github.com/shubhhh009/NEW_AI_SCRAPPER",
+    color: "from-blue-500 to-cyan-500",
   },
   {
     title: "Gemini Clone",
@@ -22,77 +26,78 @@ const projects = [
     tech: ["React", "Node.js", "Express", "MongoDB"],
     live: "https://react-ai-tool-oljv.vercel.app/",
     github: "https://github.com/shubhhh009/react-ai-tool",
+    color: "from-emerald-500 to-teal-500",
   },
   {
     title: "Modern School Management System",
     description:
-      "VidhyaPro is a modern education-focused learning application designed to provide students and learners with a simple, structured, and efficient digital learning experience.",
-    tech: ["HTML, CSS, Javascript"],
+      "VidhyaPro is a modern education-focused learning application designed to provide students and learners with a simple, structured, and efficient learning experience.",
+    tech: ["HTML", "CSS", "Javascript"],
     live: "https://school-project-five-lilac.vercel.app/",
     github: "#",
+    color: "from-orange-500 to-red-500",
   },
 ];
 
 const Projects = () => {
   return (
-    <section
-      id="projects"
-      className="min-h-[60vh] bg-white dark:bg-black text-black dark:text-white px-10 py-20"
-    >
-      <div className="w-full flex flex-col md:flex-row justify-between">
-        <div className="flex-1 flex flex-col gap-8">
-          <h2 className="text-4xl font-semibold">
-            My <span className="text-purple-600">Projects</span>
-          </h2>
+    <section id="projects" className="py-20 px-6 md:px-12">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-4xl md:text-5xl font-extrabold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">
+          Featured Projects
+        </h2>
 
-         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {projects.map((project,index)=>(
-               <div 
-               key={index}
-               className="rounded-xl border border-black/10 dark:border-white/10 
-               bg-black/5 dark:bg-white/5 
-               p-6 hover:scale-[1.02] hover:border-purple-500/50
-               transition-all duration-300"
-               >
-                <h3 className="text-2xl font-semibold mb-3">
+        <div className="grid gap-8 md:grid-cols-2">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className="group relative rounded-2xl overflow-hidden glass hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+            >
+              {/* Colored Top Border */}
+              <div className={`h-2 w-full bg-gradient-to-r ${project.color}`} />
+
+              <div className="p-8">
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="text-2xl font-bold text-gray-800 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
                     {project.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm leading-relaxed">
-                    {project.description}
+                  </h3>
+                  <div className="flex gap-3">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white transition-colors"
+                    >
+                      <Github size={20} />
+                    </a>
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-500 hover:text-purple-500 dark:text-gray-400 dark:hover:text-purple-400 transition-colors"
+                    >
+                      <ExternalLink size={20} />
+                    </a>
+                  </div>
+                </div>
+
+                <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                  {project.description}
                 </p>
-                <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tech.map((t,i)=>(
-                        <span 
-                        key={i}
-                         className="text-xs px-3 py-1 rounded-full
-                                 bg-purple-500/10 text-purple-400
-                                 border border-purple-500/20  hover:text-white"
-                        >
-                        {t}
-                        </span>
-                    ))}
+
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map((t, i) => (
+                    <span
+                      key={i}
+                      className="text-xs font-semibold px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-300"
+                    >
+                      {t}
+                    </span>
+                  ))}
                 </div>
-                 <div className="flex gap-4">
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm font-medium text-purple-400 hover:text-purple-300"
-                  >
-                    Live Demo
-                  </a>
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm font-medium text-gray-400 hover:text-white"
-                  >
-                    GitHub
-                  </a>
-                </div>
-               </div>
-            ))}
-         </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

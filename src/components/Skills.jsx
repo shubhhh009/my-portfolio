@@ -1,141 +1,47 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 
 function Skills() {
   const skills = [
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "TypeScript",
-    "React.js",
-    "Next.js",
-    "Vue.js",
-    "Vite.js",
-    "Redux",
-    "Tailwind CSS",
-    "Bootstrap",
-    "Material UI",
-    "Node.js",
-    "Express.js",
-    "Nest.js",
-    "MongoDB",
-    "MySQL",
-    "Firebase",
-    "RESTful APIs",
-    "JWT",
-    "OAuth",
-    "Git",
-    "GitHub",
-    "GitLab",
-    "CI/CD Pipelines",
-    "AWS",
-    "Google Cloud",
-    "Vercel",
-    "Netlify",
-    "Docker",
-    "WebSockets",
+   "HTML", "CSS", "JavaScript", "TypeScript", "React.js", "Next.js", 
+    "Vue.js", "Vite.js", "Redux", "Tailwind CSS", "Bootstrap", 
+    "Material UI", "Node.js", "Express.js", "Nest.js", "MongoDB", 
+    "MySQL", "Firebase", "PostgreSQL", "Prisma", "AWS", 
+    "Docker", "Git", "GitHub", "GitLab"
   ];
 
-  const VISIBLE_COUNT = 12;
-  const [showAll, setShowAll] = useState(false);
-
-  const visibleSkills = showAll ? skills : skills.slice(0, VISIBLE_COUNT);
-
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
-      viewport={{ once: true }}
-      id="skills"
-
-    className={`${showAll ? "min-h-[80vh]" : "min-h-fit"}
-           bg-white dark:bg-black text-black dark:text-white px-10 py-8`}
-
-
-    >
-      <div className="w-full mx-auto">
-        {/* Title */}
-        <h2 className="text-4xl font-bold mb-4">
-          My <span className="text-purple-600">Skills</span>
+    <section id="skills" className="py-20 px-6 md:px-12">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-4xl md:text-5xl font-extrabold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">
+          Skills & Technologies
         </h2>
 
-        <p className="text-purple-400 font-semibold mb-12">
-          Technologies & tools I work with
-        </p>
-
-        {/* Skills */}
-        <div
-          className=" grid
-           grid-cols-6       
-           sm:grid-cols-4
-           md:grid-cols-6
-           lg:grid-cols-8
-           gap-4
-           justify-items-center"
-        >
-          {visibleSkills.map((skill, i) => (
-            <SkillBubble key={i} label={skill} />
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+          {skills.map((skill, index) => (
+            <SkillCard key={index} label={skill} index={index} />
           ))}
         </div>
-
-        {/* Show More / Less Button */}
-        {skills.length > VISIBLE_COUNT && (
-          <div className="flex justify-center mt-14">
-            <button
-              onClick={() => setShowAll(!showAll)}
-              className="px-8 py-3 rounded-full border border-purple-600
-                         text-purple-400 font-semibold
-                         hover:bg-purple-600 hover:text-white
-                         transition"
-            >
-              {showAll ? "Show Less" : "Show More"}
-            </button>
-          </div>
-        )}
       </div>
-    </motion.section>
+    </section>
   );
 }
+
+const SkillCard = ({ label, index }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.4, delay: index * 0.05 }}
+    whileHover={{ scale: 1.05 }}
+    className="aspect-square flex flex-col items-center justify-center p-4 rounded-3xl bg-white/40 dark:bg-white/5 border border-white/20 dark:border-white/5 shadow-lg backdrop-blur-sm hover:bg-white/60 dark:hover:bg-white/10 transition-all cursor-default"
+  >
+    <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-600 to-pink-600 mb-2">
+      {label.charAt(0)}
+    </div>
+    <span className="text-sm md:text-base font-semibold text-gray-700 dark:text-gray-200 text-center">
+      {label}
+    </span>
+  </motion.div>
+);
 
 export default Skills;
-
-/* ---------------- Skill Bubble ---------------- */
-
-function SkillBubble({ label }) {
-  const [explode, setExplode] = useState(false);
-
-  return (
-    <div
-      className="relative w-12 h-12 sm:w-20 sm:h-20 md:w-28 md:h-28"
-      onMouseEnter={() => setExplode(true)}
-      onMouseLeave={() => setExplode(false)}
-    >
-      {/* Main Circle */}
-      <div
-        className={`absolute inset-0 flex items-center justify-center
-        rounded-full bg-purple-600 font-semibold
-        text-[8px] sm:text-xs md:text-sm text-center px-2
-        transition-all duration-500
-        ${explode ? "scale-0 opacity-0" : "scale-100 opacity-100"}`}
-      >
-        {label}
-      </div>
-
-      {/* Particles */}
-      {[...Array(12)].map((_, i) => (
-        <span
-          key={i}
-          className={`absolute w-2 h-2 bg-purple-400 rounded-full
-          transition-all duration-700
-          ${explode ? "opacity-100" : "opacity-0"}`}
-          style={{
-            top: "50%",
-            left: "50%",
-            transform: `rotate(${i * 30}deg) translate(${explode ? 50 : 0}px)`,
-          }}
-        />
-      ))}
-    </div>
-  );
-}
