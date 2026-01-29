@@ -83,10 +83,10 @@ const Sidebar = () => {
             </button>
 
             <div className="flex justify-center gap-4 text-gray-500 dark:text-gray-400">
-              <SocialIcon href="https://github.com" icon={<Github size={20} />} />
-              <SocialIcon href="https://linkedin.com" icon={<Linkedin size={20} />} />
-              <SocialIcon href="https://twitter.com" icon={<Twitter size={20} />} />
-              <SocialIcon href="mailto:email@example.com" icon={<Mail size={20} />} />
+              <SocialIcon href="https://github.com/shubhhh009" icon={<Github size={20} />} />
+              <SocialIcon href="https://www.linkedin.com/in/shubham-tiwari-64b4b824b/" icon={<Linkedin size={20} />} />
+              <SocialIcon href="https://x.com/sachint34801982" icon={<Twitter size={20} />} />
+              <SocialIcon href="mailto:tiwarisachin8482@gmail.com" icon={<Mail size={20} />} />
             </div>
             
             <a 
