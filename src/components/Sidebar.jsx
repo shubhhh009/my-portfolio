@@ -28,7 +28,7 @@ const Sidebar = () => {
     <>
         {/* Mobile Top Bar */}
         <div className="md:hidden fixed top-0 left-0 w-full h-16 bg-white/70 dark:bg-black/80 backdrop-blur-md z-50 flex items-center justify-between px-6 border-b border-white/10 shadow-sm">
-            <span className="font-bold text-xl bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">Shubham Tiwari</span>
+            <span className="font-bold text-xl bg-clip-text text-transparent bg-linear-to-r from-purple-600 to-pink-600">Shubham Tiwari</span>
             <button onClick={toggleMenu} className="text-gray-700 dark:text-gray-200">
                 {isOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
@@ -51,7 +51,7 @@ const Sidebar = () => {
                 className="w-full h-full rounded-full object-cover border-4 border-white dark:border-black"
               />
             </div>
-            <h1 className="text-2xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 truncate w-full">
+            <h1 className="text-2xl font-extrabold bg-clip-text text-transparent bg-linear-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 truncate w-full">
               Shubham Tiwari
             </h1>
             <p className="text-sm font-medium text-gray-600 dark:text-gray-400 mt-1">
@@ -83,16 +83,16 @@ const Sidebar = () => {
             </button>
 
             <div className="flex justify-center gap-4 text-gray-500 dark:text-gray-400">
-              <SocialIcon href="https://github.com/shubhhh009" icon={<Github size={20} />} />
-              <SocialIcon href="https://www.linkedin.com/in/shubham-tiwari-64b4b824b/" icon={<Linkedin size={20} />} />
-              <SocialIcon href="https://x.com/sachint34801982" icon={<Twitter size={20} />} />
-              <SocialIcon href="mailto:tiwarisachin8482@gmail.com" icon={<Mail size={20} />} />
+              <SocialIcon href="https://github.com/shubhhh009" icon={<Github size={20} />} label="GitHub Profile" />
+              <SocialIcon href="https://www.linkedin.com/in/shubham-tiwari-64b4b824b/" icon={<Linkedin size={20} />} label="LinkedIn Profile" />
+              <SocialIcon href="https://x.com/sachint34801982" icon={<Twitter size={20} />} label="Twitter Profile" />
+              <SocialIcon href="mailto:tiwarisachin8482@gmail.com" icon={<Mail size={20} />} label="Email Me" />
             </div>
             
             <a 
                 href="/resume.pdf" 
                 download
-                className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold shadow-lg hover:shadow-purple-500/30 transition-all duration-300 hover:-translate-y-1"
+                className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-linear-to-r from-purple-600 to-pink-600 text-white font-semibold shadow-lg hover:shadow-purple-500/30 transition-all duration-300 hover:-translate-y-1"
             >
                 <Download size={18} /> Download CV
             </a>
@@ -127,11 +127,12 @@ const NavItem = ({ to, label, onClick }) => (
   </li>
 );
 
-const SocialIcon = ({ href, icon }) => (
+const SocialIcon = ({ href, icon, label }) => (
   <a
     href={href}
     target="_blank"
     rel="noopener noreferrer"
+    aria-label={label}
     className="p-2 rounded-lg hover:bg-white/40 dark:hover:bg-white/10 hover:text-purple-600 dark:hover:text-purple-400 transition-all"
   >
     {icon}

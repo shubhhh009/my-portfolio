@@ -9,7 +9,7 @@ function Skills() {
    "JavaScript", "TypeScript", "React.js", "Next.js", "HTML", "CSS", "Bootstrap", "Material UI", "Node.js", "Express.js", "Nest.js", "MongoDB", "MySQL", "Firebase", "PostgreSQL", "Prisma", "AWS", "Docker", "Git", "GitHub", "GitLab"
   ];
 
-  const visibleSkills = showAll ? skills : skills.slice(0, 5);
+  const visibleSkills = showAll ? skills : skills.slice(0, 10);
 
   return (
     <section id="skills" className="py-20 px-6 md:px-12">

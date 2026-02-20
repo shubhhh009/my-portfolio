@@ -22,17 +22,18 @@ function Hero() {
             whileHover={{ scale: 1.02 }}
             className="text-5xl md:text-7xl font-extrabold leading-tight tracking-tight text-gray-900 dark:text-white"
           >
-            Shubham <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">Tiwari</span>
+            Building Scalable <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">Full-Stack Solutions</span>
           </motion.h1>
 
           <h2 className="text-2xl md:text-3xl font-medium text-gray-600 dark:text-gray-300">
-            Full Stack Developer
+            Shubham Tiwari • Full Stack Developer
           </h2>
 
           <p className="max-w-xl text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
-            I craft modern, high-performance web applications with a focus on 
-            <span className="font-semibold text-purple-600 dark:text-purple-400"> scalable architecture</span> and 
-            <span className="font-semibold text-pink-600 dark:text-pink-400"> user-centric design</span>.
+            Full-Stack Developer with 2+ years of experience specializing in 
+            <span className="font-semibold text-purple-600 dark:text-purple-400"> React, Node.js, and Cloud Architecture</span>. 
+            I bridge the gap between complex backend logic and intuitive frontend experiences, focusing on 
+            <span className="font-semibold text-pink-600 dark:text-pink-400"> clean code </span> that scales with your ambition.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mt-6 justify-center md:justify-start">
@@ -40,7 +41,7 @@ function Hero() {
               onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
               className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-2xl font-bold shadow-lg hover:shadow-purple-500/30 hover:-translate-y-1 transition-all duration-300"
             >
-              View Projects
+              Let's Build Something Great
             </button>
             <button 
               onClick={() => document.getElementById('contact')?.scrollIntoView({behavior:'smooth'})}

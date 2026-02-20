@@ -4,10 +4,10 @@ const About = () => {
   return (
     <section
       id="about"
-      className="min-h-[60vh] bg-white dark:bg-black text-black dark:text-white px-10 py-20 flex flex-col justify-center"
+      className="min-h-[60vh] px-10 py-20 flex flex-col justify-center"
     >
       <div className="max-w-7xl mx-auto w-full">
-        <h2 className="text-5xl font-extrabold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">
+        <h2 className="text-5xl font-extrabold mb-8 text-transparent bg-clip-text bg-linear-to-r from-purple-500 to-pink-500">
           About Me
         </h2>
         
@@ -32,16 +32,16 @@ const About = () => {
             {/* Right Side: Stats / Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 relative">
                  {/* Decorative backend glow */}
-                 <div className="absolute -inset-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl opacity-20 blur-2xl animate-pulse"></div>
+                 <div className="absolute -inset-4 bg-linear-to-r from-purple-600 to-pink-600 rounded-xl opacity-20 blur-2xl animate-pulse"></div>
 
                 <div className="relative glass rounded-2xl p-8 shadow-xl hover:scale-105 transition-transform duration-300">
-                    <h3 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 mb-2">2+</h3>
+                    <h3 className="text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-purple-400 to-pink-600 mb-2">2+</h3>
                      <h4 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">Years Experience</h4>
                     <p className="text-gray-600 dark:text-gray-400">Hands-on project-based experience in Full Stack Dev.</p>
                 </div>
 
                 <div className="relative glass rounded-2xl p-8 shadow-xl hover:scale-105 transition-transform duration-300">
-                     <h3 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 mb-2">20+</h3>
+                     <h3 className="text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-purple-400 to-pink-600 mb-2">20+</h3>
                      <h4 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">Projects Built</h4>
                     <p className="text-gray-600 dark:text-gray-400">Frontend, Full Stack & UI Engineering focused.</p>
                 </div>

@@ -11,12 +11,12 @@ const projects = [
     color: "from-purple-500 to-indigo-500",
   },
   {
-    title: "WebInsight AI",
+    title: "CareOps",
     description:
-      "An AI-powered web scraper that extracts website data and answers user queries using background jobs.",
-    tech: ["Next.js", "Node.js", "PostgreSQL", "BullMQ"],
-    live: "https://new-ai-scrapper-l43e.vercel.app/",
-    github: "https://github.com/shubhhh009/NEW_AI_SCRAPPER",
+      "A comprehensive healthcare management dashboard designed to streamline clinic operations, patient scheduling, and medical record management with high visual fidelity.",
+    tech: ["Next.js", "Prisma", "PostgreSQL", "Tailwind CSS"],
+    live: "https://care-ops-drab.vercel.app/dashboard",
+    github: "https://github.com/shubhhh009/CareOps",
     color: "from-blue-500 to-cyan-500",
   },
   {
@@ -43,7 +43,7 @@ const Projects = () => {
   return (
     <section id="projects" className="py-20 px-6 md:px-12">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-extrabold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">
+        <h2 className="text-4xl md:text-5xl font-extrabold mb-12 text-transparent bg-clip-text bg-linear-to-r from-purple-500 to-pink-500">
           Featured Projects
         </h2>
 
@@ -54,7 +54,7 @@ const Projects = () => {
               className="group relative rounded-2xl overflow-hidden glass hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
             >
               {/* Colored Top Border */}
-              <div className={`h-2 w-full bg-gradient-to-r ${project.color}`} />
+              <div className={`h-2 w-full bg-linear-to-r ${project.color}`} />
 
               <div className="p-8">
                 <div className="flex justify-between items-start mb-4">
@@ -98,6 +98,19 @@ const Projects = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* VIEW ALL PROJECTS BUTTON */}
+        <div className="mt-16 flex justify-center">
+          <a
+            href="https://github.com/shubhhh009"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 bg-linear-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-2xl font-bold shadow-lg hover:shadow-purple-500/30 hover:-translate-y-1 transition-all duration-300"
+          >
+            <Github size={20} />
+            View All Projects
+          </a>
         </div>
       </div>
     </section>
