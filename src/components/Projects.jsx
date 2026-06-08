@@ -19,14 +19,14 @@ const projects = [
     github: "https://github.com/shubhhh009/CareOps",
     color: "from-blue-500 to-cyan-500",
   },
-  {
-    title: "Gemini Clone",
+   {
+    title: "Dharma Finance",
     description:
-      "A full-stack application inspired by Google Gemini with AI-powered conversational capabilities.",
-    tech: ["React", "Node.js", "Express", "MongoDB"],
-    live: "https://react-ai-tool-oljv.vercel.app/",
-    github: "https://github.com/shubhhh009/react-ai-tool",
-    color: "from-emerald-500 to-teal-500",
+      "Built a fully responsive financial services website using React.js and Tailwind CSS, focusing on modern UI, performance, and seamless user experience across all devices.",
+    tech: ["React.js", "CTailwind CSS", "Javascript","Vercel"],
+    live: "https://www.dharmaafinance.com/",
+    github: "https://github.com/shubhhh009/dharmaFinance",
+    color: "from-orange-500 to-red-500",
   },
   {
     title: "Modern School Management System",
